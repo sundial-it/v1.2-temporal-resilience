@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solar Intelligence — Sundial IT Consultancy</title>
+<meta name="description" content="Consult Sundial's AI security architect on post-quantum lattice security and chronological defenses.">
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="antialiased select-none" data-page="oracle">
+
+<div id="cur"></div>
+<canvas id="enc-canvas"></canvas>
+<nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-5 border-b border-[rgba(255,213,79,0.08)] bg-[#050402]/90 backdrop-blur-md">
+  <a href="index.html" class="logo font-mono text-lg font-medium tracking-wider text-white">
+    SUNDIAL<span class="text-[#ffd54f] font-semibold">_IT</span>
+    <span class="text-[0.6rem] text-[#7c4dff] ml-2 px-1.5 py-0.5 border border-[#7c4dff]/35 bg-[#7c4dff]/5 rounded font-mono">v1.2 // temporal-resilience</span>
+  </a>
+
+  <ul class="hidden lg:flex items-center gap-8 list-none font-mono">
+    <li><a href="protocol.html" data-page="protocol" class="nav-link text-[0.72rem] tracking-[0.12em] text-[#6e5e49] font-medium uppercase hover:text-[#ffd54f] transition-all">Solar Protocol</a></li>
+    <li><a href="sandbox.html" data-page="sandbox" class="nav-link text-[0.72rem] tracking-[0.12em] text-[#6e5e49] font-medium uppercase hover:text-[#ffd54f] transition-all">Temporal Sandbox</a></li>
+    <li><a href="lattice.html" data-page="lattice" class="nav-link text-[0.72rem] tracking-[0.12em] text-[#6e5e49] font-medium uppercase hover:text-[#ffd54f] transition-all">Gnomon Shadow Grid</a></li>
+    <li><a href="oracle.html" data-page="oracle" class="nav-link text-[0.72rem] tracking-[0.12em] text-[#6e5e49] font-medium uppercase hover:text-[#ffd54f] transition-all">Solar Intelligence</a></li>
+    <li><a href="compare.html" data-page="compare" class="nav-link text-[0.72rem] tracking-[0.12em] text-[#6e5e49] font-medium uppercase hover:text-[#ffd54f] transition-all">Benchmark Matrix</a></li>
+  </ul>
+
+  <div class="flex items-center gap-4">
+    <button id="audio-toggle" onclick="toggleAudio()" class="p-2.5 border border-[#6e5e49]/40 hover:border-[#ffd54f] rounded text-[#6e5e49] hover:text-[#ffd54f] transition-all" title="Toggle Synthesizer Audio Feedback">
+      <svg id="audio-icon" class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+        <path d="M3.27 1.44L2 2.72l4.28 4.28L3 11H1v2h2l4 4v-4.11l4 4V23l-5.64-5.64l1.42-1.42L11 19.17V17.8l6.32 6.32l1.28-1.28L3.27 1.44M11 5L8.54 7.46l1.41 1.41L11 7.83V5m7 7c0-1.72-.77-3.26-2-4.3V5.5c2.75 1.16 4.5 3.93 4.5 7.5c0 1.93-.5 3.73-1.39 5.31l-1.46-1.46c.53-1.12.85-2.38.85-3.85m-3 0c0-.58-.16-1.13-.41-1.62l-1.5 1.5c.06.04.09.08.09.12c0 .83-.67 1.5-1.5 1.5c-.04 0-.08-.03-.12-.09l-1.5 1.5c.49.25 1.04.41 1.62.41c1.93 0 3.5-1.57 3.5-3.5z"/>
+      </svg>
+    </button>
+    <button class="nav-btn font-mono text-[0.68rem] font-semibold tracking-wider uppercase px-4 py-2 border border-[#ffd54f] text-[#ffd54f] bg-transparent hover:bg-[#ffd54f] hover:text-[#000] cyber-clip-sm transition-all" onclick="openWaitlistModal()">Join Waitlist</button>
+  </div>
+</nav>
+
+<section id="ai-oracle" class="page-head relative pb-24 z-10">
+  <div class="max-w-6xl mx-auto px-6 lg:px-12">
+    <div class="space-y-4 mb-10 text-center">
+      <p class="sec-tag font-mono text-xs tracking-[0.2em] text-[#7c4dff] uppercase">// Dynamic Diagnostics</p>
+      <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-white">Consult The Sundial Intelligence Oracle</h1>
+      <p class="text-[#6e5e49] max-w-2xl mx-auto leading-relaxed text-sm md:text-base">
+        Directly query our AI Cryptographer and Enterprise Cloud Security Architect powered by Gemini 2.5. Pose questions on post-quantum lattice security, network handshakes, or chronological defenses.
+      </p>
+    </div>
+
+    <div class="rv max-w-4xl mx-auto bg-[#141009] border border-[rgba(255,213,79,0.22)] rounded shadow-2xl overflow-hidden">
+      <div class="bg-[#020408] px-4 py-3 flex items-center justify-between border-b border-[rgba(255,213,79,0.15)]">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-[#ff5252]"></span>
+          <span class="w-2.5 h-2.5 rounded-full bg-[#ffd54f]"></span>
+          <span class="w-2.5 h-2.5 rounded-full bg-[#00e676]"></span>
+          <span class="text-[0.68rem] font-mono text-[#6e5e49] ml-2">GEMINI-CORE // SUNDIAL SECURITY CONSULTANT v2.5</span>
+        </div>
+        <span class="text-[0.58rem] font-mono text-[#7c4dff] tracking-widest uppercase animate-pulse">● CHRONO-DIALOGUE PROTOCOL ACTIVE</span>
+      </div>
+
+      <div class="p-6 space-y-4 text-left">
+        <div id="ai-messages" class="h-[300px] overflow-y-auto space-y-4 border border-white/5 bg-[#020408] p-4 rounded font-mono text-xs leading-relaxed text-[#cfe4f7]">
+          <div class="flex items-start gap-2.5">
+            <span class="text-[#ffd54f] font-bold">[SUNDIAL_ORACLE]:</span>
+            <div>
+              <p class="text-white mb-2">Systems diagnostic initialized. I am the chief cryptographic advisor at Sundial IT Consultancy. Ask about post-quantum security modeling, dynamic zero-knowledge routing, or how concentric timing defenses immunize legacy server pipelines.</p>
+              <div class="flex flex-wrap gap-2 mt-2">
+                <button onclick="prefillOracle('How does Sundial protect standard classical databases against future quantum decryptors?')" class="px-2.5 py-1 border border-[#ffd54f]/25 bg-[#ffd54f]/5 hover:bg-[#ffd54f]/15 hover:border-[#ffd54f]/50 rounded text-[0.65rem] text-[#ffd54f]">"Defending classical data?"</button>
+                <button onclick="prefillOracle('Explain what makes lattice-based post-quantum algorithms secure simply.')" class="px-2.5 py-1 border border-[#ffd54f]/25 bg-[#ffd54f]/5 hover:bg-[#ffd54f]/15 hover:border-[#ffd54f]/50 rounded text-[0.65rem] text-[#ffd54f]">"Why is lattice math safe?"</button>
+                <button onclick="prefillOracle('How can cloud infrastructure use chronological synchronization as a defense?')" class="px-2.5 py-1 border border-[#ffd54f]/25 bg-[#ffd54f]/5 hover:bg-[#ffd54f]/15 hover:border-[#ffd54f]/50 rounded text-[0.65rem] text-[#ffd54f]">"Chronological Cloud Defenses"</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex gap-2">
+          <input type="text" id="ai-input" placeholder="Initiate advanced secure diagnostic dialog..." class="flex-1 bg-[#020408] border border-[#6e5e49]/40 text-xs font-mono text-[#cfe4f7] p-3 rounded focus:outline-none focus:border-[#ffd54f]">
+          <button onclick="askOracle()" id="oracle-send-btn" class="px-5 py-3 bg-[#ffd54f] hover:bg-[#ffb300] text-black font-mono text-xs font-semibold tracking-wider rounded uppercase transition-colors">
+            TRANSMIT
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="relative py-12 border-t border-[rgba(255,213,79,0.08)] bg-[#050402] z-10">
+  <div class="max-w-6xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
+    <a href="index.html" class="foot-logo font-mono text-sm tracking-wider text-white">
+      SUNDIAL<span class="text-[#ffd54f] font-semibold">_IT</span>
+    </a>
+    <p class="text-xs text-[#6e5e49]">© 2026 Sundial IT Consultancy. Engineered globally. Secure in the absolute limit.</p>
+    <div class="flex gap-6">
+      <a href="#" class="text-xs text-[#6e5e49] hover:text-[#ffd54f] transition-colors">Whitepaper</a>
+      <a href="#" class="text-xs text-[#6e5e49] hover:text-[#ffd54f] transition-colors">Documentation</a>
+      <a href="#" class="text-xs text-[#6e5e49] hover:text-[#ffd54f] transition-colors">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/common.js"></script>
+<script src="js/oracle.js"></script>
+</body>
+</html>

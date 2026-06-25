@@ -1,0 +1,178 @@
+/* ============================================================
+   SUNDIAL IT CONSULTANCY — SHARED STYLESHEET
+   Edit colors, fonts, and global effects here. Changes apply
+   to every page automatically since they all link this file.
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #050402;      /* Eclipse Black */
+  --bg2: #0d0a06;      /* Bronze Shadow */
+  --surface: #141009;  /* Deep Gnomon Wood/Bronze */
+  --gold: #ffd54f;     /* Solar Gold */
+  --gold2: #ffb300;    /* Warm Solar Flare */
+  --violet: #7c4dff;   /* Celestial Twilight Purple */
+  --green: #00e676;    /* Active System Green */
+  --red: #ff5252;      /* Critical Alert Red */
+  --text: #f5ede0;     /* Warm Sun-Bleached Paper */
+  --muted: #6e5e49;    /* Weathered Bronze */
+  --border: rgba(255, 213, 79, 0.12);
+  --glow-gold: 0 0 30px rgba(255, 213, 79, 0.25);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Space Grotesk', sans-serif;
+  overflow-x: hidden;
+  cursor: crosshair;
+}
+
+.mono-font {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+/* CELESTIAL INTERACTIVE MOUSE CURSOR */
+#cur {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: var(--gold);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width .12s, height .12s;
+  mix-blend-mode: difference;
+}
+body:has(button:hover) #cur,
+body:has(a:hover) #cur,
+body:has(input:hover) #cur,
+body:has(select:hover) #cur,
+body:has(textarea:hover) #cur,
+body:has(canvas:hover) #cur {
+  width: 26px;
+  height: 26px;
+  opacity: 0.7;
+  background: var(--gold);
+  box-shadow: 0 0 15px var(--gold2);
+}
+
+/* FULL-SCREEN CELESTIAL BACKGROUND */
+#enc-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* PREMIUM CYBER STYLES & CLIPS */
+.cyber-clip {
+  clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px));
+}
+
+.cyber-clip-sm {
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+}
+
+/* TICKER RUNNER ANIMATIONS */
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.ticker {
+  display: flex;
+  animation: ticker 30s linear infinite;
+}
+
+/* HERO / SCROLL-CUE ENTRANCE ANIMATIONS
+   (previously referenced as animate-[rise_...] / animate-[scrollpulse_...]
+   in the markup but never defined — added here so they actually run) */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes scrollpulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(0.8); }
+  50%      { opacity: 1;   transform: scaleY(1); }
+}
+
+/* GENERAL BLINK UTILITY */
+.blink {
+  animation: blink 1.2s infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* INTERSECTION SCROLL REVEALS */
+.rv {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.rv.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* DESIGNED SCROLLBAR */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--muted);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
+
+/* ACTIVE NAV LINK (added so visitors can see which page they're on) */
+.nav-link.active {
+  color: var(--gold) !important;
+}
+.nav-link.active::after {
+  content: '';
+  display: block;
+  height: 1px;
+  margin-top: 4px;
+  background: var(--gold);
+}
+
+/* SIMPLE SUB-PAGE HEADER (used on every page except the homepage) */
+.page-head {
+  padding-top: 9rem;
+}
+
+/* Visible keyboard focus (accessibility floor) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker, .blink, #cur { animation: none !important; }
+  .rv { transition: none !important; opacity: 1 !important; transform: none !important; }
+}
