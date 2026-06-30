@@ -48,4 +48,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.15 });
     statsObs.observe(statsSection);
   }
+
+  function initFeatureTabs() {
+    const buttons = document.querySelectorAll('.tab-btn');
+    const panels = document.querySelectorAll('.tab-panel');
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const target = button.dataset.tab;
+        buttons.forEach((btn) => btn.classList.toggle('active', btn === button));
+        panels.forEach((panel) => panel.classList.toggle('active', panel.id === target));
+      });
+    });
+  }
+
+  initFeatureTabs();
 });

@@ -108,6 +108,164 @@
   </div>
 </section>
 
+<section id="feature-tabs" class="relative py-24 md:py-32 z-10 border-t border-[rgba(255,213,79,0.1)]">
+  <div class="max-w-6xl mx-auto px-6 lg:px-12">
+    <p class="sec-tag rv font-mono text-xs tracking-[0.2em] text-[#ffd54f] uppercase mb-3">// Core Capabilities</p>
+    <h2 class="sec-h rv text-3xl md:text-5xl font-bold tracking-tight text-white mb-4">Tabbed Capability Interface</h2>
+    <p class="sec-sub rv text-[#6e5e49] max-w-2xl leading-relaxed">Switch between Sundial’s architecture, security, intelligence, and operations pillars. Each tab reveals the product value, technical detail, and advantages for enterprise deployment.</p>
+
+    <div class="tab-wrapper mt-12 bg-[#050402] border border-[rgba(255,213,79,0.1)] rounded-3xl overflow-hidden">
+      <div class="tab-buttons flex flex-wrap gap-3 p-4 bg-[#090705] border-b border-[rgba(255,213,79,0.08)]">
+        <button class="tab-btn active" data-tab="tab-architecture">Architecture</button>
+        <button class="tab-btn" data-tab="tab-defense">Defense</button>
+        <button class="tab-btn" data-tab="tab-intelligence">Intelligence</button>
+        <button class="tab-btn" data-tab="tab-operations">Operations</button>
+      </div>
+      <div class="tab-panels p-8 space-y-8">
+        <div id="tab-architecture" class="tab-panel active grid gap-6 lg:grid-cols-2">
+          <div>
+            <span class="text-xs tracking-[0.24em] text-[#ffd54f] uppercase font-mono">Architecture</span>
+            <h3 class="text-2xl font-semibold text-white mt-4">Chrono-Rotational Key Systems</h3>
+            <p class="mt-4 text-[#cfe4f7] leading-relaxed">Sundial blends deterministic rotational matrices with layered key derivation so every session follows a time-varying, mathematically anchored path. This structure supports legacy TLS transport, hybrid cloud, and future-proof lattice-resistant key generation.</p>
+            <ul class="mt-6 space-y-3 text-sm text-[#6e5e49]">
+              <li>• Dual-phase gateway and client seed projection</li>
+              <li>• Shadow-derived key chronology for harvest-now/decrypt-later resilience</li>
+              <li>• Compatible with existing enterprise PKI and cloud API endpoints</li>
+            </ul>
+          </div>
+          <div class="grid gap-4">
+            <div class="p-6 border border-[rgba(255,213,79,0.08)] rounded-3xl bg-[#0d0a06]">
+              <span class="text-xs uppercase tracking-[0.25em] text-[#ffd54f] font-mono">Hybrid Mode</span>
+              <p class="mt-3 text-sm text-[#cfe4f7]">Use classical transport layers with new temporal key rotation without full stack replacement.</p>
+            </div>
+            <div class="p-6 border border-[rgba(255,213,79,0.08)] rounded-3xl bg-[#0d0a06]">
+              <span class="text-xs uppercase tracking-[0.25em] text-[#ffd54f] font-mono">Shadow Anchors</span>
+              <p class="mt-3 text-sm text-[#cfe4f7]">Time and angle metadata are folded into the key schedule to make each handshake unique and resistant to replay.</p>
+            </div>
+          </div>
+        </div>
+        <div id="tab-defense" class="tab-panel grid gap-6 lg:grid-cols-2">
+          <div>
+            <span class="text-xs tracking-[0.24em] text-[#ffd54f] uppercase font-mono">Defense</span>
+            <h3 class="text-2xl font-semibold text-white mt-4">Resilient Threat Mitigation</h3>
+            <p class="mt-4 text-[#cfe4f7] leading-relaxed">A layered defense model protects both data in transit and data at rest. Each safeguard is engineered as a separate module so you can adopt the full suite, or only the controls your environment needs.</p>
+            <ul class="mt-6 space-y-3 text-sm text-[#6e5e49]">
+              <li>• Micro-rotation key refresh every epoch</li>
+              <li>• Optic-state tamper detection and silent shutdown</li>
+              <li>• Zero-knowledge path validation for proxies and bridges</li>
+            </ul>
+          </div>
+          <div class="grid gap-4">
+            <div class="p-6 border border-[rgba(255,213,79,0.08)] rounded-3xl bg-[#0d0a06]">
+              <span class="text-xs uppercase tracking-[0.25em] text-[#ffd54f] font-mono">Harvest Protection</span>
+              <p class="mt-3 text-sm text-[#cfe4f7]">Stored ciphertext remains unreadable even under future cryptanalysis because key evolution is deterministic but time-anchored.</p>
+            </div>
+            <div class="p-6 border border-[rgba(255,213,79,0.08)] rounded-3xl bg-[#0d0a06]">
+              <span class="text-xs uppercase tracking-[0.25em] text-[#ffd54f] font-mono">Gateway Isolation</span>
+              <p class="mt-3 text-sm text-[#cfe4f7]">Network boundary routers authenticate only metadata and rotated digests, eliminating plaintext exposure.</p>
+            </div>
+          </div>
+        </div>
+        <div id="tab-intelligence" class="tab-panel grid gap-6 lg:grid-cols-2">
+          <div>
+            <span class="text-xs tracking-[0.24em] text-[#ffd54f] uppercase font-mono">Intelligence</span>
+            <h3 class="text-2xl font-semibold text-white mt-4">Solar Intelligence Console</h3>
+            <p class="mt-4 text-[#cfe4f7] leading-relaxed">Ask the Oracle about secure deployment, cryptographic design, or operational behavior. The backend proxy keeps your key secure while delivering high-quality guidance.</p>
+            <ul class="mt-6 space-y-3 text-sm text-[#6e5e49]">
+              <li>• Dedicated assistant for security architecture questions</li>
+              <li>• Backend proxy avoids exposing API keys</li>
+              <li>• Adaptive output for technical and executive audiences</li>
+            </ul>
+          </div>
+          <div class="grid gap-4">
+            <div class="p-6 border border-[rgba(255,213,79,0.08)] rounded-3xl bg-[#0d0a06]">
+              <span class="text-xs uppercase tracking-[0.25em] text-[#ffd54f] font-mono">Secure Proxy</span>
+              <p class="mt-3 text-sm text-[#cfe4f7]">Query the Oracle without revealing secrets in the browser.</p>
+            </div>
+            <div class="p-6 border border-[rgba(255,213,79,0.08)] rounded-3xl bg-[#0d0a06]">
+              <span class="text-xs uppercase tracking-[0.25em] text-[#ffd54f] font-mono">Adaptive Briefing</span>
+              <p class="mt-3 text-sm text-[#cfe4f7]">The Oracle tailors responses across security, compliance, and implementation contexts.</p>
+            </div>
+          </div>
+        </div>
+        <div id="tab-operations" class="tab-panel grid gap-6 lg:grid-cols-2">
+          <div>
+            <span class="text-xs tracking-[0.24em] text-[#ffd54f] uppercase font-mono">Operations</span>
+            <h3 class="text-2xl font-semibold text-white mt-4">Deployment & Monitoring</h3>
+            <p class="mt-4 text-[#cfe4f7] leading-relaxed">Deploy Sundial with minimal disruption. Observe active key rotation, latency, and integration health across hybrid data centers and cloud regions.</p>
+            <ul class="mt-6 space-y-3 text-sm text-[#6e5e49]">
+              <li>• Docker-ready container deployment</li>
+              <li>• Modular service staging and rollout</li>
+              <li>• Audit-aware logs and telemetry-ready output</li>
+            </ul>
+          </div>
+          <div class="grid gap-4">
+            <div class="p-6 border border-[rgba(255,213,79,0.08)] rounded-3xl bg-[#0d0a06]">
+              <span class="text-xs uppercase tracking-[0.25em] text-[#ffd54f] font-mono">Production-ready</span>
+              <p class="mt-3 text-sm text-[#cfe4f7]">Use the provided Dockerfile and Compose manifest for deployable infrastructure.</p>
+            </div>
+            <div class="p-6 border border-[rgba(255,213,79,0.08)] rounded-3xl bg-[#0d0a06]">
+              <span class="text-xs uppercase tracking-[0.25em] text-[#ffd54f] font-mono">Monitoring</span>
+              <p class="mt-3 text-sm text-[#cfe4f7]">Add logging and metrics at the service edge when deploying to Render, AWS, or self-hosted clusters.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES & CAPABILITY SECTION -->
+<section id="services" class="relative py-24 md:py-32 z-10 border-t border-[rgba(255,213,79,0.1)]">
+  <div class="max-w-6xl mx-auto px-6 lg:px-12">
+    <p class="sec-tag rv font-mono text-xs tracking-[0.2em] text-[#ffd54f] uppercase mb-3">// Our Services</p>
+    <h2 class="sec-h rv text-3xl md:text-5xl font-bold tracking-tight text-white mb-4">Delivered Services for Modern Enterprises</h2>
+    <p class="sec-sub rv text-[#6e5e49] max-w-2xl leading-relaxed">A curated suite of cloud, security, intelligence, and operations capabilities designed to bring your infrastructure into a trusted future state.</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12 rv">
+      <article class="p-8 bg-[#050402] border border-[rgba(255,213,79,0.08)] rounded-3xl hover:border-[#ffd54f] transition-all">
+        <span class="text-xs tracking-[0.2em] uppercase text-[#ffd54f] font-mono">Azure Strategy</span>
+        <h3 class="mt-4 text-xl font-semibold text-white">Managed Cloud & Infrastructure</h3>
+        <p class="mt-3 text-sm text-[#cfe4f7] leading-relaxed">Secure, cost-effective cloud delivery with governance, migrations, and managed services tailored for enterprise risk profiles.</p>
+      </article>
+      <article class="p-8 bg-[#050402] border border-[rgba(255,213,79,0.08)] rounded-3xl hover:border-[#ffd54f] transition-all">
+        <span class="text-xs tracking-[0.2em] uppercase text-[#ffd54f] font-mono">Business Applications</span>
+        <h3 class="mt-4 text-xl font-semibold text-white">Dynamics & Application Management</h3>
+        <p class="mt-3 text-sm text-[#cfe4f7] leading-relaxed">End-to-end support for Dynamics 365, enterprise workflows, and application operations with proactive performance monitoring.</p>
+      </article>
+      <article class="p-8 bg-[#050402] border border-[rgba(255,213,79,0.08)] rounded-3xl hover:border-[#ffd54f] transition-all">
+        <span class="text-xs tracking-[0.2em] uppercase text-[#ffd54f] font-mono">Workplace</span>
+        <h3 class="mt-4 text-xl font-semibold text-white">Modern Workplace Enablement</h3>
+        <p class="mt-3 text-sm text-[#cfe4f7] leading-relaxed">Transform collaboration and remote productivity through Microsoft 365, virtualization, and secure digital workplace services.</p>
+      </article>
+      <article class="p-8 bg-[#050402] border border-[rgba(255,213,79,0.08)] rounded-3xl hover:border-[#ffd54f] transition-all">
+        <span class="text-xs tracking-[0.2em] uppercase text-[#ffd54f] font-mono">Data & AI</span>
+        <h3 class="mt-4 text-xl font-semibold text-white">Analytics, AI & Data Engineering</h3>
+        <p class="mt-3 text-sm text-[#cfe4f7] leading-relaxed">Drive insights and automation with modern data stacks, analytics pipelines, and AI-ready architecture for strategic decision making.</p>
+      </article>
+      <article class="p-8 bg-[#050402] border border-[rgba(255,213,79,0.08)] rounded-3xl hover:border-[#ffd54f] transition-all">
+        <span class="text-xs tracking-[0.2em] uppercase text-[#ffd54f] font-mono">Security</span>
+        <h3 class="mt-4 text-xl font-semibold text-white">Cybersecurity & Compliance</h3>
+        <p class="mt-3 text-sm text-[#cfe4f7] leading-relaxed">Protect your operations with defense-in-depth, compliance frameworks, and zero-trust controls built for sensitive enterprise workloads.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- TRUSTED CUSTOMERS SECTION -->
+<section id="trusted" class="relative py-20 z-10 border-t border-[rgba(255,213,79,0.1)]">
+  <div class="max-w-6xl mx-auto px-6 lg:px-12 text-center">
+    <p class="sec-tag rv font-mono text-xs tracking-[0.2em] text-[#ffd54f] uppercase mb-3">// Trusted By</p>
+    <h2 class="sec-h rv text-3xl md:text-5xl font-bold tracking-tight text-white mb-10">Enterprise customers across industries</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 rv">
+      <div class="p-6 bg-[#050402] border border-[rgba(255,213,79,0.08)] rounded-3xl flex items-center justify-center text-[#6e5e49]">LOGO</div>
+      <div class="p-6 bg-[#050402] border border-[rgba(255,213,79,0.08)] rounded-3xl flex items-center justify-center text-[#6e5e49]">LOGO</div>
+      <div class="p-6 bg-[#050402] border border-[rgba(255,213,79,0.08)] rounded-3xl flex items-center justify-center text-[#6e5e49]">LOGO</div>
+      <div class="p-6 bg-[#050402] border border-[rgba(255,213,79,0.08)] rounded-3xl flex items-center justify-center text-[#6e5e49]">LOGO</div>
+    </div>
+  </div>
+</section>
+
 <!-- SECURE FEATURES / IMMUNITIES SECTION -->
 <section id="features" class="relative py-24 md:py-32 z-10 border-t border-[rgba(255,213,79,0.1)]">
   <div class="max-w-6xl mx-auto px-6 lg:px-12 text-left">
@@ -169,6 +327,79 @@
         <div class="stat-n text-4xl lg:text-5xl font-bold text-white font-mono" id="s4">0</div>
         <div class="stat-l text-xs text-[#6e5e49] mt-2 uppercase tracking-wider font-mono">Hardware Environments</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- CUSTOMER SUCCESS STORIES SECTION -->
+<section id="stories" class="relative py-24 md:py-32 z-10 border-t border-[rgba(255,213,79,0.1)]">
+  <div class="max-w-6xl mx-auto px-6 lg:px-12 text-left">
+    <p class="sec-tag rv font-mono text-xs tracking-[0.2em] text-[#ffd54f] uppercase mb-3">// Customer Success Stories</p>
+    <h2 class="sec-h rv text-3xl md:text-5xl font-bold tracking-tight text-white mb-4">Real enterprise outcomes from intelligent cloud adoption</h2>
+    <p class="sec-sub rv text-[#6e5e49] max-w-2xl leading-relaxed">Case studies and customer stories showing how Sundial reduces risk, speeds adoption, and delivers measurable secure performance improvements.</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12 rv">
+      <article class="p-8 bg-[#050402] border border-[rgba(255,213,79,0.08)] rounded-3xl hover:border-[#ffd54f] transition-all">
+        <span class="text-xs tracking-[0.2em] uppercase text-[#ffd54f] font-mono">Scandinavian Tobacco</span>
+        <h3 class="mt-4 text-2xl font-semibold text-white">Coming back under control with secure cloud migration</h3>
+        <p class="mt-4 text-sm text-[#cfe4f7] leading-relaxed">A global manufacturer regained operational visibility and hardened its digital estate by modernizing workflows and adopting Sundial’s cloud defense strategy.</p>
+        <a href="#" class="inline-flex mt-6 items-center text-[#ffd54f] text-xs uppercase tracking-[0.2em] font-semibold">Read the story →</a>
+      </article>
+      <article class="p-8 bg-[#050402] border border-[rgba(255,213,79,0.08)] rounded-3xl hover:border-[#ffd54f] transition-all">
+        <span class="text-xs tracking-[0.2em] uppercase text-[#ffd54f] font-mono">VBO Tickets</span>
+        <h3 class="mt-4 text-2xl font-semibold text-white">Keeping live events online with resilient platform operations</h3>
+        <p class="mt-4 text-sm text-[#cfe4f7] leading-relaxed">Event infrastructure stayed live across peak demand, with rapid remediation and secure access controls powered by our analytics and security layer.</p>
+        <a href="#" class="inline-flex mt-6 items-center text-[#ffd54f] text-xs uppercase tracking-[0.2em] font-semibold">Read the story →</a>
+      </article>
+    </div>
+    <div class="mt-8 text-center">
+      <a href="#" class="font-mono text-xs tracking-wider uppercase px-8 py-4 border border-white/20 text-[#cfe4f7] hover:border-[#ffd54f] hover:text-[#ffd54f] cyber-clip transition-all inline-block">More Success Stories</a>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS & INSIGHTS SECTION -->
+<section id="blog" class="relative py-24 md:py-32 z-10 border-t border-[rgba(255,213,79,0.1)]">
+  <div class="max-w-6xl mx-auto px-6 lg:px-12 text-left">
+    <p class="sec-tag rv font-mono text-xs tracking-[0.2em] text-[#ffd54f] uppercase mb-3">// News & Insights</p>
+    <h2 class="sec-h rv text-3xl md:text-5xl font-bold tracking-tight text-white mb-4">Latest thinking on cloud, security, and AI</h2>
+    <p class="sec-sub rv text-[#6e5e49] max-w-2xl leading-relaxed">Thought leadership articles and research notes that help executives understand how to move forward with secure digital transformation.</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 rv">
+      <article class="p-8 bg-[#050402] border border-[rgba(255,213,79,0.08)] rounded-3xl hover:border-[#ffd54f] transition-all">
+        <span class="text-xs tracking-[0.2em] uppercase text-[#ffd54f] font-mono">#AI</span>
+        <h3 class="mt-4 text-xl font-semibold text-white">Why most AI initiatives fail to prove real ROI</h3>
+        <p class="mt-4 text-sm text-[#cfe4f7] leading-relaxed">A framework for connecting artificial intelligence investments to measurable business outcomes.</p>
+        <a href="#" class="inline-flex mt-6 items-center text-[#ffd54f] text-xs uppercase tracking-[0.2em] font-semibold">Read more →</a>
+      </article>
+      <article class="p-8 bg-[#050402] border border-[rgba(255,213,79,0.08)] rounded-3xl hover:border-[#ffd54f] transition-all">
+        <span class="text-xs tracking-[0.2em] uppercase text-[#ffd54f] font-mono">#Cloud</span>
+        <h3 class="mt-4 text-xl font-semibold text-white">Building a future-ready cloud operating model</h3>
+        <p class="mt-4 text-sm text-[#cfe4f7] leading-relaxed">Practical guidance for bringing governance, security and performance into a single cloud strategy.</p>
+        <a href="#" class="inline-flex mt-6 items-center text-[#ffd54f] text-xs uppercase tracking-[0.2em] font-semibold">Read more →</a>
+      </article>
+      <article class="p-8 bg-[#050402] border border-[rgba(255,213,79,0.08)] rounded-3xl hover:border-[#ffd54f] transition-all">
+        <span class="text-xs tracking-[0.2em] uppercase text-[#ffd54f] font-mono">#Security</span>
+        <h3 class="mt-4 text-xl font-semibold text-white">How to build trust without exposing your infrastructure</h3>
+        <p class="mt-4 text-sm text-[#cfe4f7] leading-relaxed">Steps to implement zero-trust security that keeps networks, apps and data resilient.</p>
+        <a href="#" class="inline-flex mt-6 items-center text-[#ffd54f] text-xs uppercase tracking-[0.2em] font-semibold">Read more →</a>
+      </article>
+    </div>
+    <div class="mt-8 text-center">
+      <a href="#" class="font-mono text-xs tracking-wider uppercase px-8 py-4 border border-white/20 text-[#cfe4f7] hover:border-[#ffd54f] hover:text-[#ffd54f] cyber-clip transition-all inline-block">View All Insights</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT PANEL -->
+<section id="contact-panel" class="relative py-24 md:py-32 z-10 border-t border-[rgba(255,213,79,0.1)] bg-[radial-gradient(ellipse_60%_70%_at_50%_50%,rgba(255,213,79,0.04),transparent)]">
+  <div class="max-w-5xl mx-auto px-6 lg:px-12 text-center">
+    <span class="text-xs tracking-[0.32em] uppercase text-[#ffd54f] font-mono">// Let's connect</span>
+    <h2 class="text-4xl md:text-5xl font-bold text-white mt-4">What is your biggest challenge?</h2>
+    <p class="mt-4 text-[#6e5e49] max-w-2xl mx-auto leading-relaxed">Tell us your challenge and we’ll match it with a secure deployment, operational model, or AI-driven defense plan.</p>
+    <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+      <a href="#" class="px-8 py-4 bg-[#ffd54f] text-black font-mono text-xs font-semibold uppercase rounded-full hover:opacity-90 transition-all">Speak with our team</a>
+      <a href="#" class="px-8 py-4 border border-white/20 text-[#cfe4f7] font-mono text-xs font-semibold uppercase rounded-full hover:border-[#ffd54f] hover:text-[#ffd54f] transition-all">Join the waitlist</a>
     </div>
   </div>
 </section>
