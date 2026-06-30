@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Solar Intelligence — Sundial IT Consultancy</title>
+  <meta name="description" content="Ask the Sundial Oracle for guidance about deployment, cryptography, or system design. Queries are proxied to the server-side oracle endpoint.">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="antialiased select-none" data-page="oracle">
+  <div id="cur"></div>
+  <canvas id="enc-canvas"></canvas>
+
+  <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-5 border-b border-[rgba(255,213,79,0.08)] bg-[#050402]/90 backdrop-blur-md">
+    <a href="index.html" class="logo font-mono text-lg font-medium tracking-wider text-white">SUNDIAL<span class="text-[#ffd54f] font-semibold">_IT</span></a>
+    <div class="flex items-center gap-4">
+      <button class="nav-btn font-mono text-[0.68rem] font-semibold tracking-wider uppercase px-4 py-2 border border-[#ffd54f] text-[#ffd54f] bg-transparent hover:bg-[#ffd54f] hover:text-[#000] cyber-clip-sm transition-all" onclick="openWaitlistModal()">Join Waitlist</button>
+    </div>
+  </nav>
+
+  <main class="page-head relative pt-32 pb-24 z-10">
+    <div class="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+      <p class="sec-tag rv font-mono text-xs tracking-[0.2em] text-[#ffd54f] uppercase">// Oracle</p>
+      <h1 class="sec-h rv text-3xl md:text-5xl font-bold tracking-tight text-white mt-2">Solar Intelligence — Ask the Oracle</h1>
+      <p class="sec-sub rv text-[#6e5e49] mt-4">The Oracle is a server-proxied assistant. Questions are sent to the backend — no client-side API keys required.</p>
+
+      <div class="mt-8 text-left">
+        <label class="text-xs text-[#6e5e49] font-mono uppercase">Your Question</label>
+        <textarea id="oracle-prompt" rows="6" class="w-full bg-[#0d0a06] border border-[rgba(255,213,79,0.06)] p-4 text-white font-mono" placeholder="e.g., 'How to integrate Sundial with Kubernetes for rolling key rotations?'">
+        </textarea>
+        <div class="mt-4 flex gap-3">
+          <button id="oracle-submit" onclick="askOracle()" class="px-6 py-3 bg-[#ffd54f] text-black font-mono text-xs font-bold uppercase">Ask Oracle</button>
+          <button onclick="document.getElementById('oracle-prompt').value=''" class="px-6 py-3 border border-white/20 text-[#cfe4f7] font-mono text-xs font-bold uppercase">Clear</button>
+        </div>
+
+        <div id="oracle-response" class="mt-6 bg-[#050402] border border-[rgba(255,213,79,0.06)] p-4 text-sm font-mono text-[#cfe4f7] min-h-[120px]"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="relative py-12 border-t border-[rgba(255,213,79,0.08)] bg-[#050402] z-10">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
+      <a href="index.html" class="foot-logo font-mono text-sm tracking-wider text-white">SUNDIAL<span class="text-[#ffd54f] font-semibold">_IT</span></a>
+      <p class="text-xs text-[#6e5e49]">© 2026 Sundial IT Consultancy.</p>
+    </div>
+  </footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/oracle.js"></script>
+</body>
+</html>

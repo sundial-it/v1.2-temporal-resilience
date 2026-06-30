@@ -1,0 +1,12 @@
+{
+  "name": "sundial-client",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "npx serve public -l 5000",
+    "build": "echo 'static client; no build step'"
+  },
+  "devDependencies": {
+    "serve": "^14.2.0"
+  }
+}

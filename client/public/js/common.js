@@ -56,12 +56,18 @@ function injectWidgets() {
               <option>Intellectual Property Enclosure</option>
             </select>
           </div>
-          <button onclick="submitModalWaitlist()" class="w-full py-3 bg-[#ffd54f] text-black font-mono text-xs font-bold uppercase hover:opacity-85 transition-opacity">GENERATE SECURE TOKEN</button>
+          <button id="modal-submit-btn" class="w-full py-3 bg-[#ffd54f] text-black font-mono text-xs font-bold uppercase hover:opacity-85 transition-opacity">GENERATE SECURE TOKEN</button>
         </div>
       </div>
     </div>
   `;
   document.body.appendChild(wrap);
+
+  // wire modal submit after injection
+  setTimeout(() => {
+    const btn = document.getElementById('modal-submit-btn');
+    if (btn) btn.addEventListener('click', submitModalWaitlist);
+  }, 30);
 }
 
 function openWaitlistModal() {
@@ -72,14 +78,37 @@ function closeWaitlistModal() {
   triggerBeep(330, 0.08);
   document.getElementById('waitlist-modal').classList.add('hidden');
 }
-function submitModalWaitlist() {
-  const email = document.getElementById('modal-email').value.trim();
+
+async function submitModalWaitlist() {
+  const emailEl = document.getElementById('modal-email');
+  const concernEl = document.getElementById('modal-concern');
+  const email = emailEl ? emailEl.value.trim() : '';
+  const concern = concernEl ? concernEl.value : '';
   if (!email || !email.includes('@')) {
     showToast("Verification Error", "Please provide a valid secure domain address.", "❌", "var(--red)");
     return;
   }
-  closeWaitlistModal();
-  showToast("Waitlist Verified", "Secured index reservation code: " + crypto.randomUUID().slice(0, 8).toUpperCase(), "🔑", "var(--green)");
+
+  // send to server API if available
+  try {
+    const res = await fetch('/api/waitlist', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, concern })
+    });
+    if (res.ok) {
+      const data = await res.json();
+      closeWaitlistModal();
+      showToast("Waitlist Verified", "Reservation saved (id: " + (data.id || 'n/a') + ")", "🔑", "var(--green)");
+      return;
+    }
+    throw new Error('Network response not ok');
+  } catch (err) {
+    // fallback to client-side token display if server unavailable
+    closeWaitlistModal();
+    showToast("Offline Registration", "Local reservation code: " + crypto.randomUUID().slice(0, 8).toUpperCase(), "🔑", "var(--gold)");
+    console.warn('Waitlist submit failed:', err);
+  }
 }
 
 /* ---------- 3. TOAST NOTIFICATIONS ---------- */

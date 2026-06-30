@@ -1,10 +1,5 @@
-/* ============================================================
-   HOME PAGE ONLY — ticker text + animated stat counters.
-   Loaded only by index.html since no other page has these elements.
-   ============================================================ */
-
+/* HOME PAGE JS copied for client/public */
 document.addEventListener('DOMContentLoaded', () => {
-  /* ---------- SCROLLING TICKER ---------- */
   const tickerInner = document.getElementById('ticker-inner');
   if (tickerInner) {
     const TICKER_CHARS = 'SUNDIAL_IT::SHADOW_VECTOR_LOCK::ANGLE_0x7C::TEMPORAL_RESILIENCE::NIST_LATTICE_OK::';
@@ -21,23 +16,19 @@ document.addEventListener('DOMContentLoaded', () => {
     tickerInner.style.minWidth = '200%';
   }
 
-  /* ---------- ANIMATED STAT COUNTERS ---------- */
   function animCount(el, target, suffix, duration) {
     if (!el) return;
-    const preservedSpan = el.querySelector('span'); // e.g. the small "x" / "%" badge
+    const preservedSpan = el.querySelector('span');
     const startTime = performance.now();
-
     function tick(now) {
       const progress = Math.min((now - startTime) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
       const current = Math.round(target * eased);
-
       if (preservedSpan) {
-        el.firstChild.textContent = current; // keep the styled suffix span intact
+        el.firstChild.textContent = current;
       } else {
         el.textContent = current + suffix;
       }
-
       if (progress < 1) requestAnimationFrame(tick);
     }
     requestAnimationFrame(tick);
